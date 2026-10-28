@@ -445,6 +445,29 @@
       .modal .m-foot .code-box{flex:1}
       .modal .m-foot .btn-go{padding:11px 18px}
 
+      /* ---------- REGISTRATION / TRUST ---------- */
+      .reg-note{font-size:.93rem;color:var(--ink-soft);margin:0 0 14px}
+      .reg-note b{color:var(--ink)}
+      .reg-form{display:grid;gap:12px}
+      .reg-form label{display:grid;gap:6px;font-weight:700;font-size:.92rem}
+      .reg-form label .opt{font-weight:600;color:var(--ink-faint);font-size:.82rem}
+      .reg-form input[type="text"],.reg-form input[type="email"],.reg-form select{
+        border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);
+        font:inherit;font-weight:500;padding:10px 12px;width:100%;min-width:0;
+      }
+      .reg-form input:focus,.reg-form select:focus{border-color:var(--teal);outline:none}
+      .reg-form label.reg-consent{display:flex;flex-direction:row;gap:10px;align-items:flex-start;font-weight:600}
+      .reg-consent input{width:19px;height:19px;margin-top:2px;flex:none;accent-color:var(--teal)}
+      .reg-error{margin:0;color:#b3261e;font-size:.9rem;font-weight:600}
+      @media (prefers-color-scheme: dark){.reg-error{color:#ff9d85}}
+      .reg-actions{display:flex;flex-wrap:wrap;gap:8px}
+      .btn-reg-mail{border:0;border-radius:10px;background:var(--coral);color:#fff;font-weight:800;padding:11px 18px}
+      .btn-reg-copy{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:10px;font-weight:700;padding:11px 16px}
+      .reg-privacy{margin:0;font-size:.86rem;color:var(--ink-faint)}
+      .reg-status{margin:0;font-size:.9rem;font-weight:600;color:var(--ok);white-space:pre-line}
+      .reg-status:empty{display:none}
+      .stack-col{display:grid;gap:16px;align-content:start}
+
       footer{margin-top:52px;border-top:1.5px solid var(--line);padding:26px 0 40px;color:var(--ink-soft);font-size:.88rem}
       footer .f-grid{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between}
       footer p{margin:0 0 8px;max-width:46rem}
@@ -483,7 +506,7 @@
     </style>
   </head>
   <body>
-    <div class="demo-banner">Bản demo V2 — các mã bên dưới là <strong>mã mẫu để xem giao diện &amp; luồng copy</strong>, chưa phải mã thật. Mã thật sẽ được thay vào sau khi kiểm chứng từ trang khuyến mãi chính thức của từng sàn.</div>
+    <div class="demo-banner">Bản demo V2 — các mã bên dưới là <strong>mã mẫu để xem giao diện &amp; luồng copy</strong>, chưa phải mã thật. Mã thật sẽ được thay vào sau khi kiểm chứng từ trang khuyến mãi chính thức của từng sàn. Trang <strong>KHÔNG dùng được để mua sắm thật</strong>: đừng copy mã này mang sang app sàn để dùng — mọi giao dịch đều diễn ra trên app/website chính thức của sàn. Điều khoản affiliate: trang có thể nhận hoa hồng khi bạn mua qua link trên trang (khi tính năng được bật) — bạn không phải trả thêm bất kỳ chi phí nào.</div>
 
     <nav class="topnav" aria-label="Điều hướng nhanh">
       <div class="wrap">
@@ -492,6 +515,7 @@
         <a href="#tinh-tiet-kiem">Tính tiết kiệm</a>
         <a href="#lich-sale">Lịch sale</a>
         <a href="#hoan-tien">Hoàn tiền</a>
+        <a href="#dang-phat-trien">Đang phát triển</a>
         <a href="#dang-ky-affiliate">Đăng ký affiliate</a>
         <a href="#tat-ca-ma" class="fav-link" id="favNavLink">Mã đã lưu · <span id="favCount">0</span></a>
       </div>
@@ -519,7 +543,7 @@
             <button type="button" class="btn-share" data-share="copy">Sao chép link trang</button>
           </div>
           <div class="hero-meta">
-            <span><b id="statCount">–</b> mã đang hiển thị</span>
+            <span><b id="statCount">–</b> mã còn hạn · <b id="statExpired">–</b> mã đã hết hạn</span>
             <span><b>3</b> sàn thương mại điện tử</span>
             <span>Bản demo · cập nhật <b>28/10/2026</b></span>
           </div>
@@ -719,7 +743,69 @@
         </div>
       </section>
 
-      <section id="lich-sale" aria-labelledby="calTitle">
+            <section id="dang-phat-trien" aria-labelledby="devTitle">
+        <div class="sec-head">
+          <div>
+            <h2 id="devTitle">Đang phát triển trong lúc chờ mã thật</h2>
+            <p class="sec-sub">Mã thật chỉ thay vào được khi tài khoản affiliate của chủ dự án được duyệt. Trong thời gian chờ, những phần dưới đây đã làm sẵn để khi có mã thật là chạy ngay — và bạn vẫn dùng thử được các tính năng không phụ thuộc vào mã.</p>
+          </div>
+        </div>
+        <div class="cash-grid">
+          <div class="cash-card">
+            <h3>Nhận mã thật &amp; lịch sale qua email — đăng ký sớm</h3>
+            <p class="reg-note">Đây là danh sách đăng ký sớm để nhận thông báo khi có mã thật và trước các đợt sale lớn. Đây <b>không phải đăng nhập</b> — trang không có mật khẩu và không yêu cầu bạn tạo tài khoản.</p>
+            <form class="reg-form" id="regForm" novalidate>
+              <label for="regName">Tên của bạn <span class="opt">(không bắt buộc)</span></label>
+              <input type="text" id="regName" placeholder="Ví dụ: Minh Anh" autocomplete="name" />
+              <label for="regEmail">Email *</label>
+              <input type="email" id="regEmail" placeholder="ban@example.com" autocomplete="email" required />
+              <label for="regPlatform">Sàn bạn quan tâm</label>
+              <select id="regPlatform">
+                <option value="Cả 3 sàn (Shopee, Lazada, TikTok Shop)">Cả 3 sàn</option>
+                <option value="Shopee">Shopee</option>
+                <option value="Lazada">Lazada</option>
+                <option value="TikTok Shop">TikTok Shop</option>
+              </select>
+              <label class="reg-consent" for="regConsent">
+                <input type="checkbox" id="regConsent" />
+                <span>Tôi đồng ý nhận email thông báo mã giảm giá &amp; lịch sale</span>
+              </label>
+              <p class="reg-error" id="regError" role="alert" hidden></p>
+              <div class="reg-actions">
+                <button type="button" class="btn-reg-mail" id="regMailBtn">Gửi đăng ký qua email của bạn</button>
+                <button type="button" class="btn-reg-copy" id="regCopyBtn">Sao chép thông tin đăng ký</button>
+              </div>
+              <p class="reg-privacy">Thông tin chỉ nằm trong email bạn tự gửi — trang không lưu trên máy chủ, chúng tôi không tự gửi thư thay bạn. Bấm nút gửi sẽ mở ứng dụng email trên máy bạn với nội dung đã soạn sẵn; bạn kiểm tra rồi tự bấm Gửi trong ứng dụng email.</p>
+              <p class="reg-status" id="regStatus" aria-live="polite"></p>
+            </form>
+          </div>
+          <div class="stack-col">
+            <div class="cash-card">
+              <h3>Có thể làm ngay, không cần chờ mã thật</h3>
+              <ul>
+                <li><b>Đăng ký nhận thông báo sale</b> bằng biểu mẫu bên cạnh để không bỏ lỡ đợt 11.11 sắp tới.</li>
+                <li><b>Lưu mã yêu thích</b> bằng nút “☆ Lưu mã” trên từng thẻ để xem lại nhanh trong phiên này.</li>
+                <li><b>Thử máy tính tiết kiệm:</b> nhập giá trị đơn để biết mã nào hợp với giỏ hàng của bạn.</li>
+                <li><b>Chia sẻ trang</b> cho bạn bè cùng săn mã bằng các nút chia sẻ ở đầu trang.</li>
+                <li><b>Xem trước lịch sale</b> 11.11, Black Friday và 12.12 ở mục Lịch sale bên dưới để chuẩn bị giỏ hàng.</li>
+              </ul>
+            </div>
+            <div class="cash-card">
+              <h3>Riêng tư &amp; bảo mật trên trang này</h3>
+              <ul>
+                <li>Trang <b>không yêu cầu đăng nhập</b>, không thu thập mật khẩu hay thông tin thanh toán của bạn.</li>
+                <li>Trang <b>không lưu dữ liệu cá nhân trên máy chủ</b> — form đăng ký chỉ mở ứng dụng email trên máy bạn để bạn tự gửi.</li>
+                <li>Mã yêu thích chỉ giữ trong bộ nhớ của phiên mở trang hiện tại — tải lại trang là mất, không có tài khoản hay cookie theo dõi đi kèm.</li>
+                <li>Mọi giao dịch mua sắm &amp; thanh toán diễn ra trên app/website chính thức của sàn; trang này không xử lý thanh toán.</li>
+                <li>Link “Dùng ngay” ra sàn dùng <b>rel="noopener sponsored"</b> — tab mới không truy cập ngược được trang này, và quan hệ affiliate được khai báo rõ.</li>
+                <li>Khi có link affiliate thật, chính sách hoàn tiền &amp; điều kiện sẽ được công bố tại <a href="#hoan-tien">mục Hoàn tiền</a> trước khi bật tính năng.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section id="lich-sale" aria-labelledby="calTitle">
         <div class="sec-head">
           <div>
             <h2 id="calTitle">Lịch sale sắp tới</h2>
@@ -859,7 +945,7 @@
             <h3>Việc cần chốt để chạy thật</h3>
             <ul class="checklist">
               <li class="done"><span class="box" aria-hidden="true"></span><span><b>Trang V1:</b> đã dựng xong bản demo này — tìm kiếm, lọc theo sàn/danh mục, copy 1 chạm, đếm ngược 11.11 đều hoạt động.</span></li>
-              <li class="done"><span class="box" aria-hidden="true"></span><span><b>Nâng cấp V2 (bản bạn đang xem):</b> 19 mã mẫu (gồm 1 mã đã hết hạn để minh họa), lưu mã yêu thích trong phiên, bộ lọc HOT/sắp hết hạn, xem chi tiết từng mã, máy tính tiết kiệm theo giá trị đơn, mã hết hạn tự làm mờ và khóa copy, đếm ngược tự chuyển sang đợt sale tiếp theo, mục so sánh với web liệt kê mã/app hoàn tiền và nút chia sẻ trang cho người mới.</span></li>
+              <li class="done"><span class="box" aria-hidden="true"></span><span><b>Nâng cấp V2 (bản bạn đang xem):</b> 19 mã mẫu (gồm 6 mã đã hết hạn để minh họa), lưu mã yêu thích trong phiên, bộ lọc HOT/sắp hết hạn, xem chi tiết từng mã, máy tính tiết kiệm theo giá trị đơn, mã hết hạn tự làm mờ và khóa copy, đếm ngược tự chuyển sang đợt sale tiếp theo, mục so sánh với web liệt kê mã/app hoàn tiền và nút chia sẻ trang cho người mới.</span></li>
               <li><span class="box" aria-hidden="true"></span><span><b>Hoàn tiền cho người mua:</b> mới ở mức chuẩn bị — chỉ bật khi có dữ liệu affiliate thật, có tỷ lệ công bố rõ ràng và cơ chế đối soát với sàn; không hứa tỷ lệ trước.</span></li>
               <li><span class="box" aria-hidden="true"></span><span><b>Đăng ký 3 tài khoản affiliate</b> (Shopee, Lazada, TikTok Shop) bằng thông tin của bạn — đây là điều kiện để có link hoa hồng và mã thật.</span></li>
               <li><span class="box" aria-hidden="true"></span><span><b>Gửi link affiliate + mã thật đầu tiên:</b> Muse thay toàn bộ mã mẫu trên trang bằng mã đã kiểm chứng của bạn.</span></li>
@@ -943,9 +1029,9 @@
         { platform:"shopee", code:"MAU-SP5011", title:"Giảm 50K toàn sàn — đợt sale 11.11", discount:"−50K", discLabel:"đơn từ 250K", value:50, cond:"Đơn từ 250K · Không áp cho một số ngành hàng giới hạn", min:250, cat:"toan-san", expires:"2026-11-11", hot:true },
         { platform:"lazada", code:"MAU-LZFS30", title:"Voucher freeship giảm 30K", discount:"−30K ship", discLabel:"đơn từ 99K", value:30, cond:"Đơn từ 99K · Thu thập thêm tại trang Freeship của Lazada", min:99, cat:"freeship", expires:"2026-11-11", hot:true },
         { platform:"tiktok", code:"MAU-TTNEW40", title:"Ưu đãi khách mới TikTok Shop giảm 40K", discount:"−40K", discLabel:"đơn từ 120K", value:40, cond:"Chỉ tài khoản chưa từng mua trên TikTok Shop · Đơn từ 120K", min:120, cat:"toan-san", expires:"2026-11-30", hot:true },
-        { platform:"shopee", code:"MAU-SPFS30", title:"Thời trang giảm 30% — tối đa 60K", discount:"−30%", discLabel:"tối đa 60K", value:60, cond:"Đơn từ 150K · Áp cho ngành hàng thời trang", min:150, cat:"thoi-trang", expires:"2026-10-31", hot:false },
-        { platform:"lazada", code:"MAU-LZTC100", title:"Điện tử giảm 100K cho đơn lớn", discount:"−100K", discLabel:"đơn từ 1 triệu", value:100, cond:"Đơn từ 1.000K · Áp cho điện thoại, laptop, phụ kiện chính hãng", min:1000, cat:"dien-tu", expires:"2026-10-31", hot:false },
-        { platform:"tiktok", code:"MAU-TTFS20", title:"Freeship TikTok Shop giảm 20K", discount:"−20K ship", discLabel:"đơn từ 79K", value:20, cond:"Đơn từ 79K · Số lượng voucher mỗi ngày có hạn", min:79, cat:"freeship", expires:"2026-10-31", hot:false },
+        { platform:"shopee", code:"MAU-SPFS30", title:"Thời trang giảm 30% — tối đa 60K", discount:"−30%", discLabel:"tối đa 60K", value:60, cond:"Đơn từ 150K · Áp cho ngành hàng thời trang", min:150, cat:"thoi-trang", expires:"2026-10-28", hot:false },
+        { platform:"lazada", code:"MAU-LZTC100", title:"Điện tử giảm 100K cho đơn lớn", discount:"−100K", discLabel:"đơn từ 1 triệu", value:100, cond:"Đơn từ 1.000K · Áp cho điện thoại, laptop, phụ kiện chính hãng", min:1000, cat:"dien-tu", expires:"2026-10-24", hot:false },
+        { platform:"tiktok", code:"MAU-TTFS20", title:"Freeship TikTok Shop giảm 20K", discount:"−20K ship", discLabel:"đơn từ 79K", value:20, cond:"Đơn từ 79K · Số lượng voucher mỗi ngày có hạn", min:79, cat:"freeship", expires:"2026-10-25", hot:false },
         { platform:"shopee", code:"MAU-SPMOM20", title:"Mẹ & bé giảm 20% — tối đa 100K", discount:"−20%", discLabel:"tối đa 100K", value:100, cond:"Đơn từ 300K · Áp cho tã, sữa, đồ dùng cho bé", min:300, cat:"me-be", expires:"2026-11-30", hot:false },
         { platform:"lazada", code:"MAU-LZ15ALL", title:"Giảm 15% toàn sàn — tối đa 45K", discount:"−15%", discLabel:"tối đa 45K", value:45, cond:"Đơn từ 199K · Không áp cùng voucher đối tác thanh toán", min:199, cat:"toan-san", expires:"2026-11-30", hot:false },
         { platform:"tiktok", code:"MAU-TTLV25", title:"Mua trong livestream giảm thêm 25%", discount:"−25%", discLabel:"tối đa 50K", value:50, cond:"Chỉ áp khi đặt hàng ngay trong phiên live · Đơn từ 99K", min:99, cat:"toan-san", expires:"2026-11-11", hot:false },
@@ -953,8 +1039,8 @@
         { platform:"shopee", code:"MAU-SP1212", title:"Chốt năm 12.12 — giảm 60K toàn sàn", discount:"−60K", discLabel:"đơn từ 399K", value:60, cond:"Đơn từ 399K · Mở áp dụng từ đợt sale 12.12", min:399, cat:"toan-san", expires:"2026-12-12", hot:false },
         { platform:"shopee", code:"MAU-SPDT80", title:"Điện tử giảm 80K cho tai nghe & phụ kiện", discount:"−80K", discLabel:"đơn từ 500K", value:80, cond:"Đơn từ 500K · Áp cho tai nghe, loa, sạc và phụ kiện điện thoại", min:500, cat:"dien-tu", expires:"2026-11-11", hot:false },
         { platform:"lazada", code:"MAU-LZMM55", title:"Mẹ & bé giảm 55K ngày hội thương hiệu", discount:"−55K", discLabel:"đơn từ 349K", value:55, cond:"Đơn từ 349K · Áp cho gian hàng mẹ & bé chính hãng", min:349, cat:"me-be", expires:"2026-11-30", hot:false },
-        { platform:"tiktok", code:"MAU-TTBT30", title:"Làm đẹp giảm 30K cho đơn skincare", discount:"−30K", discLabel:"đơn từ 149K", value:30, cond:"Đơn từ 149K · Áp cho skincare và chăm sóc cá nhân trong TikTok Shop", min:149, cat:"lam-dep", expires:"2026-11-11", hot:true },
-        { platform:"lazada", code:"MAU-LZFA45", title:"Thời trang giảm 45K cuối tháng lương về", discount:"−45K", discLabel:"đơn từ 259K", value:45, cond:"Đơn từ 259K · Áp cho thời trang nam, nữ và phụ kiện", min:259, cat:"thoi-trang", expires:"2026-10-31", hot:false },
+        { platform:"tiktok", code:"MAU-TTBT30", title:"Làm đẹp giảm 30K cho đơn skincare", discount:"−30K", discLabel:"đơn từ 149K", value:30, cond:"Đơn từ 149K · Áp cho skincare và chăm sóc cá nhân trong TikTok Shop", min:149, cat:"lam-dep", expires:"2026-10-26", hot:true },
+        { platform:"lazada", code:"MAU-LZFA45", title:"Thời trang giảm 45K cuối tháng lương về", discount:"−45K", discLabel:"đơn từ 259K", value:45, cond:"Đơn từ 259K · Áp cho thời trang nam, nữ và phụ kiện", min:259, cat:"thoi-trang", expires:"2026-10-23", hot:false },
         { platform:"tiktok", code:"MAU-TTDT70", title:"Điện tử giảm 70K trong khung giờ vàng", discount:"−70K", discLabel:"đơn từ 599K", value:70, cond:"Đơn từ 599K · Chỉ mở trong khung giờ flash sale của TikTok Shop", min:599, cat:"dien-tu", expires:"2026-11-11", hot:false },
         { platform:"shopee", code:"MAU-SPBT25", title:"Làm đẹp giảm 25% — tối đa 70K", discount:"−25%", discLabel:"tối đa 70K", value:70, cond:"Đơn từ 200K · Áp cho mỹ phẩm và chăm sóc da", min:200, cat:"lam-dep", expires:"2026-11-30", hot:false },
         { platform:"lazada", code:"MAU-LZ1020", title:"Sale 10.10 giảm 20K toàn sàn (đã kết thúc)", discount:"−20K", discLabel:"đơn từ 150K", value:20, cond:"Đơn từ 150K · Mã của đợt sale 10.10, đã hết hạn — giữ lại để bạn thấy cách trang xử lý mã chết", min:150, cat:"toan-san", expires:"2026-10-20", hot:false }
@@ -971,10 +1057,15 @@
       var toastTimer = null;
 
       function daysLeft(expires) {
-        var end = new Date(expires + "T23:59:59+07:00");
-        var now = new Date();
-        return Math.ceil((end - now) / 86400000);
+        /* Số ngày còn lại tính theo ngày dương lịch giờ Việt Nam (UTC+7):
+           mã có ngày hết hạn là hôm nay hoặc sớm hơn được coi là đã hết hạn. */
+        var p = expires.split("-");
+        var end = Date.UTC(+p[0], +p[1] - 1, +p[2]);
+        var nowICT = new Date(Date.now() + 7 * 3600000);
+        var today = Date.UTC(nowICT.getUTCFullYear(), nowICT.getUTCMonth(), nowICT.getUTCDate());
+        return Math.round((end - today) / 86400000);
       }
+      function isExpired(d) { return daysLeft(d.expires) <= 0; }
       function fmtDate(expires) {
         var p = expires.split("-");
         return p[2] + "/" + p[1] + "/" + p[0];
@@ -1016,7 +1107,7 @@
       function dealCard(d) {
         var pf = PLATFORMS[d.platform];
         var dl = daysLeft(d.expires);
-        var expired = dl < 0;
+        var expired = isExpired(d);
         var urgent = !expired && dl <= 3;
         var expText = expired ? ("Đã hết hạn " + fmtDate(d.expires) + " — mã chỉ còn để tham khảo")
                     : dl > 1 ? ("Hết hạn " + fmtDate(d.expires) + " · còn " + dl + " ngày")
@@ -1099,7 +1190,7 @@
       }
       function sortDeals(list) {
         var arr = list.slice();
-        function expW(d) { return daysLeft(d.expires) < 0 ? 1 : 0; }
+        function expW(d) { return isExpired(d) ? 1 : 0; }
         if (state.sort === "value") arr.sort(function (a, b) { return expW(a) - expW(b) || b.value - a.value; });
         else if (state.sort === "expiry") arr.sort(function (a, b) { return expW(a) - expW(b) || (a.expires < b.expires ? -1 : 1); });
         else arr.sort(function (a, b) { return expW(a) - expW(b) || (b.hot ? 1 : 0) - (a.hot ? 1 : 0) || b.value - a.value; });
@@ -1110,14 +1201,17 @@
         grid.innerHTML = "";
         filtered.forEach(function (d) { grid.appendChild(dealCard(d)); });
         emptyState.hidden = filtered.length > 0;
-        var hot = filtered.filter(function (d) { return daysLeft(d.expires) >= 0 && (d.hot || daysLeft(d.expires) <= 3); }).slice(0, 6);
+        var hot = filtered.filter(function (d) { return !isExpired(d) && (d.hot || daysLeft(d.expires) <= 3); }).slice(0, 6);
         hotGrid.innerHTML = "";
         hot.forEach(function (d) { hotGrid.appendChild(dealCard(d)); });
         hotEmpty.hidden = hot.length > 0;
-        resultLine.innerHTML = "Đang hiển thị <b>" + filtered.length + "</b> / " + DEALS.length + " mã mẫu" +
+        var validCount = filtered.filter(function (d) { return !isExpired(d); }).length;
+        var expiredCount = filtered.length - validCount;
+        resultLine.innerHTML = "Đang hiển thị <b>" + validCount + "</b> mã mẫu còn hạn · " + expiredCount + " mã đã hết hạn (đã làm mờ, không copy được)" +
           (state.query ? ' cho từ khóa “' + state.query.replace(/</g, "&lt;") + '”' : "") +
           (state.favOnly ? " · chỉ mã đã lưu trong phiên này" : "");
-        document.getElementById("statCount").textContent = DEALS.length;
+        document.getElementById("statCount").textContent = DEALS.filter(function (d) { return !isExpired(d); }).length;
+        document.getElementById("statExpired").textContent = DEALS.filter(function (d) { return isExpired(d); }).length;
         updateFavCount();
       }
       function updateFavCount() {
@@ -1206,10 +1300,10 @@
         document.getElementById("mCond").textContent = d.cond;
         document.getElementById("mMin").textContent = fmtMoney(d.min);
         var dl = daysLeft(d.expires);
-        document.getElementById("mExp").textContent = fmtDate(d.expires) + (dl > 0 ? " (còn " + dl + " ngày)" : " (hết hạn hôm nay)");
+        document.getElementById("mExp").textContent = fmtDate(d.expires) + (isExpired(d) ? " (đã hết hạn — không copy được)" : " (còn " + dl + " ngày)");
         document.getElementById("mCode").textContent = d.code;
         var mCopyBtn = document.getElementById("mCopy");
-        if (dl < 0) { mCopyBtn.disabled = true; mCopyBtn.textContent = "Đã hết hạn"; }
+        if (isExpired(d)) { mCopyBtn.disabled = true; mCopyBtn.textContent = "Đã hết hạn"; }
         else { mCopyBtn.disabled = false; mCopyBtn.textContent = "Copy"; }
         var go = document.getElementById("mGo");
         go.href = PLATFORMS[d.platform].url;
@@ -1239,7 +1333,7 @@
         }
         var amountK = amount / 1000;
         var fits = DEALS.filter(function (d) {
-          return (pf === "all" || d.platform === pf) && d.min <= amountK && daysLeft(d.expires) >= 0;
+          return (pf === "all" || d.platform === pf) && d.min <= amountK && !isExpired(d);
         }).sort(function (a, b) { return b.value - a.value; }).slice(0, 5);
         if (!fits.length) {
           var none = document.createElement("p");
@@ -1305,6 +1399,62 @@
       }
       tick();
       setInterval(tick, 1000);
+
+      /* ---------- ĐĂNG KÝ NHẬN MÃ QUA EMAIL ----------
+         Không có máy chủ lưu trữ: nút gửi chỉ mở ứng dụng email của chính
+         người dùng (mailto:) với nội dung soạn sẵn; người dùng tự bấm Gửi. */
+      var regError = document.getElementById("regError");
+      var regStatus = document.getElementById("regStatus");
+      function regData() {
+        var email = document.getElementById("regEmail").value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          regError.textContent = "Vui lòng nhập một địa chỉ email hợp lệ để đăng ký nhận thông báo.";
+          regError.hidden = false;
+          regStatus.textContent = "";
+          return null;
+        }
+        regError.hidden = true;
+        return {
+          name: document.getElementById("regName").value.trim(),
+          email: email,
+          platform: document.getElementById("regPlatform").value,
+          consent: document.getElementById("regConsent").checked
+        };
+      }
+      function regSummary(d) {
+        return "Đăng ký nhận mã giảm giá & lịch sale\n" +
+          "Tên: " + (d.name || "(không cung cấp)") + "\n" +
+          "Email: " + d.email + "\n" +
+          "Sàn quan tâm: " + d.platform + "\n" +
+          "Đồng ý nhận email thông báo mã & lịch sale: " + (d.consent ? "Có" : "Chưa chọn");
+      }
+      document.getElementById("regMailBtn").addEventListener("click", function () {
+        var d = regData();
+        if (!d) return;
+        var mailLink = document.createElement("a");
+        mailLink.href = "mailto:?subject=" + encodeURIComponent("Đăng ký nhận mã sale") +
+          "&body=" + encodeURIComponent(regSummary(d));
+        document.body.appendChild(mailLink);
+        mailLink.click();
+        document.body.removeChild(mailLink);
+        regStatus.textContent = "Đã mở ứng dụng email trên máy bạn với nội dung soạn sẵn — hãy kiểm tra và tự bấm Gửi trong ứng dụng email để hoàn tất. Nếu ứng dụng email chưa bật, hãy dùng nút “Sao chép thông tin đăng ký”. Trang không lưu thông tin này.";
+      });
+      document.getElementById("regCopyBtn").addEventListener("click", function () {
+        var d = regData();
+        if (!d) return;
+        var text = regSummary(d);
+        function doneCopy() {
+          regStatus.textContent = "Đã sao chép thông tin đăng ký — bạn có thể dán vào email và tự gửi. Trang không lưu thông tin này.";
+          showToast("Đã sao chép thông tin đăng ký");
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(doneCopy, function () {
+            regStatus.textContent = "Không sao chép tự động được. Thông tin đăng ký của bạn:\n" + text;
+          });
+        } else {
+          regStatus.textContent = "Thông tin đăng ký của bạn:\n" + text;
+        }
+      });
 
       render();
     </script>
