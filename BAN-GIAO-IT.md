@@ -94,11 +94,11 @@ nếu IT là người thay link.
 - Nhãn phiên bản: banner và chân trang đã sửa thành "Bản demo V3"
   trong bản tách file này. Phần lộ trình trong trang vẫn nhắc tới
   V1/V2 như các giai đoạn cũ — đó là lịch sử, không phải lỗi.
-- Form đăng ký sớm: chỉ mở ứng dụng email của người dùng bằng
-  mailto (chưa có địa chỉ người nhận) hoặc sao chép thông tin,
-  không lưu lên máy chủ, không có backend. Đừng quảng cáo nó như
-  hệ thống đăng ký thật cho tới khi chốt địa chỉ nhận hoặc làm
-  backend.
+- Form đăng ký sớm, mục hoàn tiền "sắp ra mắt", mục "Đang phát triển",
+  mục đăng ký affiliate và kế hoạch triển khai đã được gỡ khỏi bản
+  final trên web (commit bản final). Chúng chỉ quay lại khi tính năng
+  thật đã sẵn sàng, kèm backend hoặc địa chỉ nhận thật — không để
+  dạng "sắp ra mắt" trên trang final.
 - Chia sẻ trang: trang dùng Web Share API của thiết bị, không
   tự lấy địa chỉ trang bằng script. Trên GitHub Pages, người dùng
   chia sẻ bằng nút chia sẻ của trình duyệt là đủ.

@@ -37,10 +37,12 @@ python3 -m http.server 8000
 - Nút "Dùng ngay" hiện trỏ về trang chủ chính thức của từng sàn, chưa phải
   link affiliate. Muốn gắn link affiliate, sửa `url` trong `PLATFORMS`
   ở `assets/codes.js` (xem `BAN-GIAO-IT.md`).
-- Form đăng ký sớm trong trang chỉ mở ứng dụng email của người dùng
-  (mailto, chưa có địa chỉ người nhận) hoặc sao chép thông tin, không lưu
-  đăng ký lên máy chủ. Chưa quảng cáo form này như một hệ thống đăng ký
-  thật cho tới khi chốt địa chỉ nhận và/hoặc backend đăng ký.
+- Bản final chỉ giữ nội dung người dùng cần: mã hot, tất cả mã, máy tính
+  tiết kiệm, hướng dẫn 3 bước, lịch sale, câu hỏi thường gặp và tuyên bố
+  miễn trừ. Các mục nội bộ đã gỡ khỏi trang: hoàn tiền "sắp ra mắt",
+  mục "Đang phát triển", form đăng ký sớm, mục đăng ký affiliate và
+  kế hoạch triển khai — những mục này chỉ quay lại khi tính năng thật
+  đã sẵn sàng, không phải ở dạng "sắp ra mắt".
 
 ## Deploy
 
